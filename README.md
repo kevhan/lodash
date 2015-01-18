@@ -1,4 +1,4 @@
-# Lo-Dash v3.0.0-pre
+# Lo-Dash v3.0.0
 
 A utility library delivering consistency, [modularity](https://www.npmjs.com/browse/keyword/lodash-modularized), [performance](https://lodash.com/benchmarks), & [extras](https://lodash.com/#features).
 
@@ -11,16 +11,16 @@ A utility library delivering consistency, [modularity](https://www.npmjs.com/bro
 
 Review the [build differences](https://github.com/lodash/lodash/wiki/build-differences) & pick the one that’s right for you.
 
-* [Modern build](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.js) ([minified](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.min.js))<br>
+* [Modern build](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.js) ([minified](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.min.js))<br>
   For new environments like Chrome, Firefox, IE ≥ 9, & Safari ≥ 5.1
-* [Compatibility build](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.compat.js) ([minified](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.compat.min.js))<br>
+* [Compatibility build](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.compat.js) ([minified](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.compat.min.js))<br>
   For new & old environments like IE ≤ 8 & PhantomJS
-* [Underscore build](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.underscore.js) ([minified](https://raw.github.com/lodash/lodash/2.4.1/dist/lodash.underscore.min.js))<br>
+* [Underscore build](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.underscore.js) ([minified](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.underscore.min.js))<br>
   A drop-in replacement for [Underscore v1.6.0](http://underscorejs.org/#1.6.0)
 
 CDN copies are available on [cdnjs](http://cdnjs.com/libraries/lodash.js/) & [jsDelivr](http://www.jsdelivr.com/#!lodash).<br>
 Create [custom builds](https://lodash.com/custom-builds) with only the features you need.<br>
-Love modules? We’ve got you covered with [lodash-amd](https://github.com/lodash/lodash-amd/tree/2.4.1), [lodash-node](https://www.npmjs.com/package/lodash-node), & [npm packages](https://www.npmjs.com/browse/keyword/lodash-modularized) per method.
+Love modules? We’ve got you covered with [lodash-amd](https://github.com/lodash/lodash-amd/tree/3.0.0), [lodash-node](https://www.npmjs.com/package/lodash-node), & [npm packages](https://www.npmjs.com/browse/keyword/lodash-modularized) per method.
 
 ## Dive in
 
@@ -56,7 +56,7 @@ In Node.js:
 // the default modern build
 var _ = require('lodash');
 
-// or the compat build
+// or the compatibility build
 var _ = require('lodash-compat');
 
 // or specific methods
