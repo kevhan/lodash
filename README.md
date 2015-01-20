@@ -16,9 +16,14 @@ Review the [build differences](https://github.com/lodash/lodash/wiki/build-diffe
 * [Compatibility build](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.compat.js) ([minified](https://raw.github.com/lodash/lodash/3.0.0/dist/lodash.compat.min.js))<br>
   For new & old environments like IE ≤ 8 & PhantomJS
 
-CDN copies are available on [cdnjs](http://cdnjs.com/libraries/lodash.js/) & [jsDelivr](http://www.jsdelivr.com/#!lodash).<br>
+Lo-Dash is available in a variety of module formats.
+
+ * npm packages for [modern](https://www.npmjs.com/package/lodash), [compatibility](https://www.npmjs.com/package/lodash-compat), & [per method](https://www.npmjs.com/browse/keyword/lodash-modularized) builds
+ * AMD modules for [modern](https://github.com/lodash/lodash/tree/3.0.0-amd) & [compatibility](https://github.com/lodash/lodash-compat/tree/3.0.0-amd) builds
+ * ES6 modules for the [modern](https://github.com/lodash/lodash/tree/3.0.0-es6) build
+
+CDN copies are available on [cdnjs](https://cdnjs.com/libraries/lodash.js/) & [jsDelivr](http://www.jsdelivr.com/#!lodash).<br>
 Create [custom builds](https://lodash.com/custom-builds) with only the features you need.<br>
-Love modules? We’ve got you covered with [lodash-amd](https://github.com/lodash/lodash-amd/tree/3.0.0), [lodash-node](https://www.npmjs.com/package/lodash-node), & [npm packages](https://www.npmjs.com/browse/keyword/lodash-modularized) per method.
 
 ## Dive in
 
@@ -35,7 +40,19 @@ In a browser:
 In an AMD loader:
 
 ```js
-require(['lodash'], function(_) {/*…*/});
+// load the modern build
+require(['lodash'], function(_) {
+  // use `_`
+});
+
+// or the amd branch
+require({
+  'packages': [
+    { 'name': 'lodash', 'location': 'path/to/lodash' }
+  ]
+}, ['lodash/collection/each'], function(each) {
+  // use `each`
+});
 ```
 
 Using npm:
@@ -43,24 +60,22 @@ Using npm:
 ```bash
 $ {sudo -H} npm i -g npm
 $ npm i --save lodash
-
-$ {sudo -H} npm i -g lodash
-$ npm ln lodash
 ```
 
-In Node.js:
+In Node.js/io.js:
 
 ```js
-// the default modern build
+// load the modern build
 var _ = require('lodash');
 
 // or the compatibility build
 var _ = require('lodash-compat');
 
-// or specific methods
-var clone = require('lodash/lang/clone');
-var keysIn = require('lodash-compat/object/keysIn');
-var transform = require('lodash.transform');
+// or a method category
+var array = require('lodash/array');
+
+// or a method
+var chunk = require('lodash/array/chunk');
 ```
 
 **Note:**
@@ -93,7 +108,8 @@ Install [n_](https://www.npmjs.com/package/n_) for a version of the REPL that in
  * [_.includes](https://lodash.com/docs#includes) accepts a `fromIndex`
  * [_.isError](https://lodash.com/docs#isError) to check for error objects
  * [_.isNative](https://lodash.com/docs#isNative) to check for native functions
- * [_.isPlainObject](https://lodash.com/docs#isPlainObject) to check for objects created by `Object`
+ * [_.isPlainObject](https://lodash.com/docs#isPlainObject) & [_.toPlainObject](https://lodash.com/docs#toPlainObject) to check for & convert to `Object` objects
+ * [_.isTypedArray](https://lodash.com/docs#isTypedArray) to check for typed arrays
  * [_.keysIn](https://lodash.com/docs#keysIn) & [_.valuesIn](https://lodash.com/docs#valuesIn) for getting keys & values of all enumerable properties
  * [_.mapValues](https://lodash.com/docs#mapValues) for [mapping](https://lodash.com/docs#map) values to an object
  * [_.merge](https://lodash.com/docs#merge) for a deep [_.extend](https://lodash.com/docs#extend)
@@ -124,6 +140,6 @@ Install [n_](https://www.npmjs.com/package/n_) for a version of the REPL that in
 
 ## Support
 
-Tested in Chrome (19, 38-39), Firefox (3, 20, 34-35), IE 6-11, Opera 25-26, Safari 5-8, Node.js 0.8.26~0.10.35, PhantomJS 1.9.8, RingoJS 0.11, & Rhino 1.7RC5.
+Tested in Chrome 38-39, Firefox 34-35, IE 6-11, Opera 25-26, Safari 5-8, io.js 1.0.3, Node.js 0.8.28 & 0.10.35, PhantomJS 1.9.8, RingoJS 0.11, & Rhino 1.7RC5.
 
-Automated browser test runs [are available](https://saucelabs.com/u/lodash) as well as CI runs for [lodash](https://travis-ci.org/lodash/lodash/), [lodash-cli](https://travis-ci.org/lodash/lodash-cli/), [lodash-amd](https://travis-ci.org/lodash/lodash-amd/), [lodash-node](https://travis-ci.org/lodash/lodash-node/), & [grunt-lodash](https://travis-ci.org/lodash/grunt-lodash). Special thanks to [Sauce Labs](https://saucelabs.com/) for providing automated browser testing.
+Automated browser test runs [are available](https://saucelabs.com/u/lodash) as well as CI runs for [lodash](https://travis-ci.org/lodash/lodash/), [lodash-cli](https://travis-ci.org/lodash/lodash-cli/), & [grunt-lodash](https://travis-ci.org/lodash/grunt-lodash). Special thanks to [Sauce Labs](https://saucelabs.com/) for providing automated browser testing.
